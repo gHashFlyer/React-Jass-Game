@@ -4,55 +4,59 @@
 
 body {
   margin: 0;
-  display: grid;
-  grid-template-columns: repeat(2, 4rem);
-  grid-template-rows: 7rem 2rem 7rem;
-  gap: 0.5rem;
-  cursor:pointer;
+
   justify-content: center;
   padding-top:1rem;
 }
 
-.deck{
-  height:100%;
-  width:100%;
-  border: 1px solid black;
+.table{
+
+  background:wheat;
+  padding-left:5vw;
+  padding-right:5vw;
+}
+.opponent{
+  height:30vh;
+  border:1px solid red;
+}
+.arena{
   display:flex;
-  justify-content: center;
-  align-items:center;
-  font-size:3rem;
-  border-radius: 0.5rem;
-  color: white;
-  user-select: none;
+  flex-direction: row;
+  justify-content:center;
+  
+  height:25vh;
+  border:1px solid green;
+  background: rgb(108, 129, 110);
+  padding-left: 5rem;;
+}
+.player{
+  height:40vh;
+  border:1px solid red;
 }
 
-.computer-deck{
-  background-color: green;
-}
-
-.player-deck{
-  background-color: blue;
-}
-
-.text{
-  grid-column: span 2;
-  display:flex;
-  justify-content: center;
-  align-items:center;
+.player-cards{
+  padding-top:1rem;
+  display: flex;
+  flex-direction: row;
+  align-content: left;
+  justify-content:space-around;
+  flex-wrap: wrap;
+  
 }
 
 .card{
-  position: relative;
-  height:100%;
-  width:100%;
+  width:120px;
   border: 1px solid black;
+  /* background:rgb(108, 129, 110); */
   border-radius: 0.5rem;
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 4rem;
+  cursor:pointer;
+  
+  
 }
-.card::before,.card::after{
-  position:absolute;
-  content: attr(data-value)
+
+.cardback{
+    width:120px;
+    border: 1px solid green;
+    border-radius: 0.5rem;
+    margin-right:3rem;
 }
