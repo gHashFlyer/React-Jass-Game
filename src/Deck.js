@@ -1,7 +1,6 @@
 const SUITS = ["L","A","B","H"] //leaves, acorns, bells, hearts
 const NAMES = ["A","K","O","U","10","9","8","7","6"]
 
-
 const ATTR = [
     {name:"A", rank:1, trank:3, val:11, tval:11},
     {name:"K", rank:2, trank:5, val:4, tval:4},
@@ -50,7 +49,7 @@ class Card{
     constructor(suit,name){
         this.name = name
         this.suit = suit
-        this.imgjsx = <img className='card' src={require(`./imgcards/${suit}${name}.png`)} />
+        this.imgjsx = <img alt={name} className='card' src={require(`./imgcards/${suit}${name}.png`)} />
     }
 }
 
