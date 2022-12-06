@@ -3,7 +3,8 @@ import React, {useState, useEffect, useMemo} from "react";
 import Deck from "./Deck";
 import "./App.css";
 
-import cardback from './imgcards/CardBack.png'
+import cardbox from './imgcards/spielkarten.jpg'
+import carddeck from './imgcards/CardBack.png'
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
   const [oppoCards, setOppoCards] = useState(false);
   const [trumpCard, setTrumpCard] = useState(false)
   const [trump, setTrump] = useState(false)
+  
   
   
   // When playJass changes to True, get some new cards and shuffle them
@@ -27,7 +29,8 @@ function App() {
       setPlayerCards(deck.cards.slice(0,9))
       setOppoCards(deck.cards.slice(9,18))
 
-      const turnupCard = deck.cards.slice(18,1)
+      const turnupCard = deck.cards[35]
+      console.log(turnupCard)
       setTrumpCard(turnupCard)
       setTrump(turnupCard.suit)
       
@@ -62,11 +65,12 @@ function App() {
   // If game has started and there is a deck of cards, then
   // show the cards remaining in the player's hand.
   let playerHand // cards not played by player
+  let turnupCard // the turn up card to display
   if(playJass && cardDeck && playerCards && oppoCards){
-    console.log(playerCards)
+
+    turnupCard = trumpCard.imgjsx
 
     playerHand = playerCards.map((card)=>{
-
       if(!card.played){
         return(
           <div onPointerDown={playCard} key={Math.random()}>
@@ -84,7 +88,7 @@ function App() {
  
 
   }
- 
+
    
 
 
@@ -94,7 +98,10 @@ function App() {
 
         <div className="opponent">
           <div className="opponent-hand">
-              <img alt='stack' className="cardback stack"  src={cardback} />
+            {!playJass && <img alt='tableDeck' className="cardback stack"  src={cardbox} />}
+            {playJass && <img alt='tableDeck' className="cardback stack"  src={carddeck} />}
+            {playJass && <div className="turnup-card">{turnupCard}</div>}
+              
           </div>
         </div>
 

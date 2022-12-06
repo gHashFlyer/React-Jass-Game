@@ -51,6 +51,7 @@ class Card{
         this.suit = suit
         let key = `${suit}${name}`
         this.cardID = key
+        this.img = `./imgcards/${suit}${name}.png`
         this.imgjsx = <img key={key} alt={key} suit={suit} name={name} className='card' src={require(`./imgcards/${suit}${name}.png`)} />
         this.played = false
     }
