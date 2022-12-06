@@ -1,6 +1,3 @@
-import CardBack from "./logo.svg"
-
-
 const SUITS = ["L","A","B","H"] //leaves, acorns, bells, hearts
 const NAMES = ["A","K","O","U","10","9","8","7","6"]
 
