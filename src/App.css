@@ -44,7 +44,7 @@ body {
   
 }
 
-.card{
+img.card{
   width:120px;
   border: 1px solid black;
   /* background:rgb(108, 129, 110); */
@@ -59,4 +59,16 @@ body {
     border: 1px solid green;
     border-radius: 0.5rem;
     margin-right:3rem;
+}
+
+.stack{
+  box-shadow: 6px 9px 2px 0px #666;
+}
+
+.jasshero{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size:10rem;
+  font-weight: bold;
+  font-style: italic ;
+
 }

@@ -49,7 +49,10 @@ class Card{
     constructor(suit,name){
         this.name = name
         this.suit = suit
-        this.imgjsx = <img alt={name} className='card' src={require(`./imgcards/${suit}${name}.png`)} />
+        let key = `${suit}${name}`
+        this.cardID = key
+        this.imgjsx = <img key={key} alt={key} suit={suit} name={name} className='card' src={require(`./imgcards/${suit}${name}.png`)} />
+        this.played = false
     }
 }
 
