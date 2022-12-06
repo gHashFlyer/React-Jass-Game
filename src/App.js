@@ -15,8 +15,8 @@ function App() {
   const [oppoCards, setOppoCards] = useState(false);
   const [trumpCard, setTrumpCard] = useState(false)
   const [trump, setTrump] = useState(false)
-  
-  
+  const [cardPlayer, setCardPlayer] = useState(false); // player's card this round
+  const [cardOppo, setCardOppo] = useState(false); // opponent's card this round
   
   // When playJass changes to True, get some new cards and shuffle them
   useEffect(() => {
@@ -85,10 +85,43 @@ function App() {
         )
       }
     })
- 
+  }
+
+
+  const opponentPlays = (e) =>{
+    if(e === 1){ // play a reply
+      console.log(".....opponent is playing a reply")
+    }else{ // play whatever
+      console.log(".....opponent is playing whatever it wants")
+      
+    }
 
   }
 
+  // Determine if opponent can play a card
+  if(oppoCards && !cardOppo){
+    let numPlayerCards = playerCards.filter((x) => x.played === false).length
+    let numOppoCards = oppoCards.filter((x) => x.played === false).length
+    console.log(playerFirst + ": " + numPlayerCards + " " + numOppoCards)
+    if(playerFirst){
+      if(numPlayerCards < numOppoCards){
+        console.log("Oppo plays reply")
+        opponentPlays(1);
+      }else{
+        console.log("Waiting on player")
+      }
+    }else{
+      if(numOppoCards === numPlayerCards){
+        console.log("Oppo plays a card")
+        opponentPlays(2);
+      }else{
+        console.log("Waiting on player response")
+      }
+    }
+
+  }
+
+  // if(!playerFirst && )
    
 
 

@@ -38,7 +38,7 @@ body {
   padding-top:1rem;
   display: flex;
   flex-direction: row;
-  align-content: left;
+  align-content: center;
   justify-content:space-around;
   flex-wrap: wrap;
   
